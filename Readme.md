@@ -1,4 +1,4 @@
-Problem Statement
+# Problem Statement
 
 A three-tier architecture is a software architecture pattern where the application is broken down into three logical tiers: the presentation layer, the business logic layer and the data storage layer.
 
@@ -6,11 +6,11 @@ This article outlines a set of proven practices for running virtual machines (VM
 
 There are variations of N-tier architectures. For the most part, the differences shouldn't matter for the purposes of these recommendations. This article assumes a typical 3-tier web app:
 
-Web tier. Handles incoming HTTP requests. Responses are returned through this tier.
+# Web tier. Handles incoming HTTP requests. Responses are returned through this tier.
 
-Business tier. Implements business processes and other functional logic for the system.
+# Business tier. Implements business processes and other functional logic for the system.
 
-Data tier. Provides persistent data storage.
+# Data tier. Provides persistent data storage.
 
 Availability Sets. Create an Availability Set for each tier, and provision at least two VMs in each tier. This approach is required to reach the availability SLA for VMs.
 
@@ -26,7 +26,7 @@ NSGs. Use network security groups (NSGs) to restrict network traffic within the 
 
 Key Vault. Use Azure Key Vault to manage encryption keys, for encrypting data at rest.
 
-Solution
+# Solution
 The Terraform resources will consists of following structure
 ├── main.tf                   // The primary entrypoint for terraform resources.
 ├── vars.tf                   // It contain the declarations for variables.
@@ -35,7 +35,7 @@ The Terraform resources will consists of following structure
 Module
 A module is a container for multiple resources that are used together. Modules can be used to create lightweight abstractions, so that you can describe your infrastructure in terms of its architecture, rather than directly in terms of physical objects.
 
-For the solution, we have created and used five modules:
+# For the solution, we have created and used five modules:
 
 resourcegroup - creating resourcegroup
 networking - creating azure virtual network and required subnets
@@ -54,7 +54,7 @@ Deployment
 Steps
 Step 0 terraform init
 
-used to initialize a working directory containing Terraform configuration files
+# used to initialize a working directory containing Terraform configuration files
 
 Step 1 terraform plan
 
